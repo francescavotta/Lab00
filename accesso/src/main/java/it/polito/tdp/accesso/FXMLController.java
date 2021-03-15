@@ -60,19 +60,19 @@ public class FXMLController {
     		
     	}else {
 
-    		if (password.matches("[a-zA-Z0-9?!@#]*") && 
-    				!password.matches("[a-z0-9?!@#]*") && 
-    				!password.matches("[a-z0-9]*") && 
-    				!password.matches("[a-z]*") &&
-    				!password.matches("[A-Z0-9?!@#]*") && 
-    				!password.matches("[A-Z0-9]*") &&
-    				!password.matches("[A-Z]*") &&
-    				!password.matches("[0-9a-zA-Z]*") &&
-    				!password.matches("[0-9a-z]*") &&
-    				!password.matches("[0-9]*") &&
-    				!password.matches("[?!@#a-zA-Z]*") &&
-    				!password.matches("[?!@#a-z]*") &&
-    				!password.matches("[?!@#]*") 
+    		if (password.matches("[a-zA-Z0-9?!@#]*") && //password corretta
+    				!password.matches("[a-z0-9?!@#]*") && //mancano le lettere Maiuscole
+    				!password.matches("[a-z0-9]*") && //mancano maiuscole e caratteri speciali
+    				!password.matches("[a-z]*") && //mancano maiuscole, speciali, numeri
+    				!password.matches("[A-Z0-9?!@#]*") && //mancano le minuscole
+    				!password.matches("[A-Z0-9]*") && //mancano minuscole e caratteri speciali
+    				!password.matches("[A-Z]*") && //mancano speciali, minuscole, numeri
+    				!password.matches("[0-9a-zA-Z]*") &&//mancano le speciali
+    				!password.matches("[0-9a-z]*") && //mancano maiuscole e speciali
+    				!password.matches("[0-9]*") &&//mancano maiuscole, minuscole, speciali, minuscole
+    				!password.matches("[?!@#a-zA-Z]*") &&//mancano i numeri
+    				!password.matches("[?!@#a-z]*") && // mancano numeri, maiuscole
+    				!password.matches("[?!@#]*") //ho solo speciali
     				)
     		{
     			labelInfo.setText("Password corretta!");
